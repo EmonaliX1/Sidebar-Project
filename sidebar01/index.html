@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar prorject 1 </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <aside class="sidebar"> 
+        <!-- sidebar header  -->
+        <header class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fa-brands fa-upwork"></i>
+            </div>
+            <button class="sidebar-toggle">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+        </header>
+
+    <!-- Sidebar Content -->
+       <div class="sidebar-content">
+        <form action="#" class="search-form">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="Search..." required>
+        </form>
+
+        <!--  Menu List -->
+        <ul class="menu-list">
+            <li class="menu-item">
+                <a href="#" class="menu-link active">
+                    <i class="fa-solid fa-table-cells-large"></i>
+                    <span class="menu-label">Dashboard</span>
+                </a>
+            </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <i class="fa-solid fa-chart-simple"></i>
+
+                    <span class="menu-label">Analystics</span>
+                </a>
+            </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <i class="fa-regular fa-bell"></i>
+                    <span class="menu-label">Notification</span>
+                </a>
+            </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                    <i class="fa-regular fa-star"></i>
+                    <span class="menu-label">Favourites</span>
+                </a>
+            </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                <i class="fa-solid fa-store"></i>
+                    <span class="menu-label">Products</span>
+                </a>
+            </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                  <i class="fa-regular fa-user"></i>
+                    <span class="menu-label">Customers</span>
+                </a>
+            </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">
+                 <i class="fa-solid fa-gear"></i>
+                    <span class="menu-label">Setting</span>
+                </a>
+            </li>
+        </ul>
+       </div>
+
+       <!-- Sidebar footer -->
+        <div class="sidebar-footer">
+            <button class="theme-toggle">
+                <div class="theme-label">
+                    <i class="fa-regular fa-moon"></i>
+                    <span class="theme-text">Dark mode</span>
+                </div>
+                <div class="theme-toggle-track">
+                    <div class="theme-toggle-indicator"></div>
+                </div>
+            </button>
+        </div>
+
+    </aside>
+    <script src="script.js" defer></script>
+</body>
+</html>
