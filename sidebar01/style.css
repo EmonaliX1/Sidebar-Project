@@ -23,6 +23,12 @@ body{
     background-color: var(--color-bg-primary);
 }
 
+body.dark-theme{
+    background-color: #1f2936 !important;
+    color:var(--color-bg-secondary) !important;
+    transition: background-color .4s ease;
+}
+
 .sidebar{
     position: sticky;
     top: 0;
@@ -30,11 +36,27 @@ body{
     height: 100vh;
     background-color: var(--color-bg-sidebar);
     border-right: 1px solid  var(--color-border-hr);
+    border-top: 1px solid var(--color-text-placholder);
     box-shadow:  0 3px 9px var(--color-shadow);
     display: flex;
     flex-shrink: 0;
     flex-direction: column;
+    transition: width 0.4s ease;
 }
+body.dark-theme .sidebar {
+    border-right: 1px solid  var(--color-text-placholder);
+    /* box-shadow:  0 3px 9px var(--color-text-placholder); */
+}
+
+body.dark-theme .sidebar{
+    background-color:  #33445b;
+    color:white;;
+}
+
+.sidebar.collapsed{
+    width: 90px;
+}
+
 
 .sidebar .sidebar-header{
     display: flex;
@@ -44,6 +66,10 @@ body{
     border-bottom: 1px solid var(--color-border-hr);
 }
 
+body.dark-theme .sidebar .sidebar-header {
+     border-bottom:1px solid var(--color-text-placholder)
+}
+
 .sidebar-header .sidebar-logo{
     width: 46px;
     height: 46px;
@@ -51,7 +77,14 @@ body{
     justify-content: center;
     align-items: center;;
     border-radius: 8px;
+    transition:  opacity 0.4s ease;
+}
 
+
+.sidebar.collapsed .sidebar-header  .sidebar-logo{
+    /* opacity: 0; */
+    width: 0px;
+    pointer-events: none;
 }
 
 .sidebar-header .sidebar-logo i {
@@ -59,6 +92,10 @@ body{
     height: 100%;
     /* border: 1px solid red; */
     font-size:2.5rem;
+}
+
+.sidebar.collapsed .sidebar-header .sidebar-logo i {
+    display: none;
 }
 
 .sidebar-header .sidebar-toggle{
@@ -74,6 +111,19 @@ body{
     background-color: var(--color-bg-secondary);
     transition: 400ms ease;
 }
+
+
+
+.sidebar.collapsed .sidebar-header .sidebar-toggle {
+    height: 48px;
+    width: 50px;
+    transform: translateX(-2px);
+}
+
+.sidebar.collapsed .sidebar-toggle i {
+    transform:  rotate(180deg);
+}
+
 
 .sidebar-header .sidebar-toggle:hover{
     background-color: var(--color-hover-secondary);
@@ -101,6 +151,11 @@ body{
     transition: 0.4s ease;
 }
 
+body.dark-theme  .search-form{
+    background-color: var(--color-text-primary);
+    color: white;
+}
+
 .sidebar-content .search-form:focus-within{
     background-color: var(--color-hover-secondary);
 }
@@ -115,9 +170,20 @@ body{
     color: var(--color-text-primary);
 }
 
+
+body.dark-theme .search-form input{
+    color: white;
+}
+
 .search-form input::placeholder {
     color: var(--color-text-placholder);
 }
+
+body.dark-theme input::placeholder{
+    color: white !important;
+}
+
+
 
 .search-form i {
     color: var(--color-text-placholder);
@@ -142,6 +208,14 @@ body{
     border-radius: 8px;
     transition: 0.3 ease;
 }
+body.dark-theme .menu-link {
+    color: white;
+}
+
+.sidebar.collapsed .menu-link .menu-label{
+    opacity: 0;
+    pointer-events: none;
+}
 
 .menu-list .menu-link:is(:hover , .active){
     color:#fff ;
@@ -152,6 +226,10 @@ body{
     padding: 20px 18px;
     white-space: nowrap;
     border-top:1px solid var(--color-border-hr) ;
+}
+
+body.dark-theme .sidebar .sidebar-footer {
+    border-top: 1px solid var(--color-text-placholder);
 }
 
 .sidebar-footer .theme-toggle{
@@ -168,14 +246,29 @@ body{
     background-color: var(--color-bg-secondary);
 }
 
+body.dark-theme .sidebar-footer .theme-toggle {
+    background-color: var(--color-text-primary);
+}
+
+
+body.dark-theme .theme-toggle :where(.theme-label , .theme-text){
+    color: white;
+}
 
 .theme-toggle .theme-label{
     display: flex;
     align-items: center;
     gap:10px;
 }
+
 .theme-toggle .theme-label .theme-text{
     font-size: 1rem;
+}
+
+.sidebar.collapsed .theme-toggle :where(.theme-text , .theme-toggle-track){
+    width: 0;
+    opacity: 0;
+    transition: all 0.2s ease;
 }
 
 .theme-toggle .theme-toggle-track{
@@ -186,6 +279,16 @@ body{
     margin-left: auto;
     background-color: #c3d1ec;
     position: relative;
+    transition:  opacity .4s 0.2s ease , 
+    background-color 0.3s ease;
+}
+
+body.dark-theme .theme-toggle .theme-toggle-track {
+    background-color: var(--color-hover-primary);
+}
+
+.sidebar.collapsed .sidebar-content {
+    scrollbar-width: none;
 }
 
 .theme-toggle-track .theme-toggle-indicator{
@@ -197,4 +300,9 @@ body{
     box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
     background-color: #fff;
     border-radius: 50%;
+    transition: transform .3s ease ;
+}
+
+body.dark-theme .theme-toggle .theme-toggle-indicator{
+    transform: translateX(24px);
 }
